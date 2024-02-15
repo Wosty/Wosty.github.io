@@ -2,20 +2,9 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 html,
-/* body {
+body {
     height: 100%;
     width: 100%;
-} */
-
-
-body {
-    /* background-image: url('../../public/backdrop.jpeg'); */
-    transition-property: background-image;
-    transition-duration: 2s;
-    transition-timing-function: linear;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 20%;
 }
 
 .md-container {

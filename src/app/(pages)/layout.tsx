@@ -1,4 +1,4 @@
-import MyNav from "@/components/MyNav";
+import Header from "@/components/Header";
 
 export default function PageLayout({
   children,
@@ -7,7 +7,7 @@ export default function PageLayout({
 }>) {
   return (
     <>
-      <MyNav />
+      <Header />
       <div>{children}</div>
     </>
   );
