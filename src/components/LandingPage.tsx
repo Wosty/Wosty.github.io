@@ -10,73 +10,61 @@ import Fade from 'react-bootstrap/Fade';
 import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
 import { CardBody, Row, Col } from 'react-bootstrap';
-import styles from '@/styles/background.module.css'
+import animations from '@/styles/animations.module.css'
 import apollo from '../../public/apollo.jpeg'
 
-function LandingPage() {
+const LandingPage = () => {
+
     return (
-        <Container className="align-items-center" fluid id="tabPreview">
-            <Row xs={1} md={2} className="g-4">
-                <Col>
-                    <Card style={{
-                        width: '18rem'
-                    }}
-                        className="text-center">
-                        <Card.Img src="apollo.jpeg"
+        <Container fluid="md" style={{ padding: '1rem' }} id="tabPreview">
+            <Row className='g-5 d-flex align-items-center' xs={1} md={4}>
+                <Col className='d-flex align-items-stretch'>
+                    <Card className={animations.floatUp} style={{ animationDelay: "1s" }}>
+                        <Card.Img src="prof.jpeg"
                             variant="top" />
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>Professional Experience</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the
-                                bulk of the card's content.
+                                Explore my professional journey and qualifications in my comprehensive resume.
+                            </Card.Text>
+                            <Button variant="primary">Go somewhere</Button>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col className='g-5 d-flex align-items-stretch'>
+                    <Card className={animations.floatUp} style={{ animationDelay: "1.25s" }}>
+                        <Card.Img src="personal.jpeg"
+                            variant="top" />
+                        <Card.Body>
+                            <Card.Title>About Me</Card.Title>
+                            <Card.Text>
+                                Discover more about my passions and my journey to get a better understanding of who I am.
                             </Card.Text>
                             <Button variant="primary">Go somewhere</Button>
                         </Card.Body>
                     </Card>
                 </Col>
                 <Col>
-                    <Card style={{
-                        width: '18rem'
-                    }}>
-                        <Card.Img src="apollo.jpeg"
+                    <Card className={animations.floatUp} style={{ animationDelay: "1.5s" }}>
+                        <Card.Img src="backdrop.jpeg"
                             variant="top" />
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>Links and Contact</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the
-                                bulk of the card's content.
+                                Explore my portfolio and professional profiles as well as direct contact information.
                             </Card.Text>
                             <Button variant="primary">Go somewhere</Button>
                         </Card.Body>
                     </Card>
                 </Col>
                 <Col>
-                    <Card style={{
-                        width: '18rem'
-                    }}>
+                    <Card className={animations.floatUp} style={{ animationDelay: "1.75s" }}>
                         <Card.Img src="apollo.jpeg"
                             variant="top" />
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>Apollo</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the
-                                bulk of the card's content.
-                            </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card style={{
-                        width: '18rem'
-                    }}>
-                        <Card.Img src="apollo.jpeg"
-                            variant="top" />
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the
-                                bulk of the card's content.
+                                Get to know my dog, Apollo, with a charming gallery showcasing his adorable moments.
                             </Card.Text>
                             <Button variant="primary">Go somewhere</Button>
                         </Card.Body>

@@ -1,26 +1,33 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Container, Nav, NavItem, NavLink, Navbar, NavbarBrand, NavbarCollapse, NavbarToggle } from 'react-bootstrap';
 
-function Header() {
+const Header = () => {
 
   return (
     <>
-      <div style={{ backgroundColor: "#eeeeee" }}>
-        <Nav className="justify-content-center" fill variant="tabs" style={{ padding: "5px 5px 0px 5px" }}>
-          <Nav.Item>
-            <Nav.Link id="homeNav" href="/">Active</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="link-1">Option 2</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="disabled" disabled>
-              Disabled
-            </Nav.Link>
-          </Nav.Item>
-        </Nav>
-      </div>
+      <Navbar collapseOnSelect expand="md" sticky='top' bg="dark" data-bs-theme="dark" className="bg-body-tertiary">
+        <Container fluid>
+          <NavbarBrand href="#home">
+            <img
+              src="/apollo.jpeg"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </NavbarBrand>
+          <NavbarToggle aria-controls="responsive-navbar-nav" />
+          <NavbarCollapse id="responsive-navbar-nav">
+            <Nav className='me-auto'>
+              <NavLink id="homeNav" href="/">Active</NavLink>
+              <NavLink eventKey="link-1">Option 2</NavLink>
+              <NavLink eventKey="disabled" disabled>
+                Disabled
+              </NavLink>
+            </Nav>
+          </NavbarCollapse>
+        </Container>
+
+      </Navbar>
     </>
   );
 }

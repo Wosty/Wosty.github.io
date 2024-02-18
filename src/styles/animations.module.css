@@ -1,0 +1,25 @@
+@keyframes fadeIn {
+    from {
+        transform: translateY(20%);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(-10%);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.floatUp {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}

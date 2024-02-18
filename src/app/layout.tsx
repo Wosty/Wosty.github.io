@@ -1,6 +1,7 @@
 //import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/styles.scss";
 import type { Metadata } from "next";
+import Header from "@/components/Header"
 
 export const metadata: Metadata = {
   title: "Wesley Till",
@@ -14,7 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}</body>
     </html>
   )
 }
