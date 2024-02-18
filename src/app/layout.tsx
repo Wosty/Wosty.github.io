@@ -1,7 +1,7 @@
+//import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/styles.scss";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "@/components/Header"
 
 export const metadata: Metadata = {
   title: "Wesley Till",
@@ -10,12 +10,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <Header />
+        {children}</body>
     </html>
-  );
+  )
 }
