@@ -1,12 +1,12 @@
-import { Container, Nav, NavItem, NavLink, Navbar, NavbarBrand, NavbarCollapse, NavbarToggle } from 'react-bootstrap';
+import { Container, Nav, NavLink, Navbar, NavbarBrand, NavbarCollapse, NavbarToggle } from 'react-bootstrap';
 
 const Header = () => {
 
   return (
     <>
-      <Navbar collapseOnSelect expand="md" sticky='top' bg="dark" data-bs-theme="dark" className="bg-body-tertiary">
+      <Navbar collapseOnSelect expand="md" sticky='top' bg="dark" data-bs-theme="dark" className='me-auto justify-content-between'>
         <Container fluid>
-          <NavbarBrand href="#home">
+          <NavbarBrand href="/">
             <img
               src="/apollo.jpeg"
               width="30"
@@ -17,16 +17,15 @@ const Header = () => {
           </NavbarBrand>
           <NavbarToggle aria-controls="responsive-navbar-nav" />
           <NavbarCollapse id="responsive-navbar-nav">
-            <Nav className='me-auto'>
-              <NavLink id="homeNav" href="/">Active</NavLink>
-              <NavLink eventKey="link-1">Option 2</NavLink>
-              <NavLink eventKey="disabled" disabled>
-                Disabled
-              </NavLink>
+            <Nav className="flex-grow-1 justify-content-evenly">
+              <NavLink href="/resume">Professional Experience</NavLink>
+              <NavLink href="/about">About Me</NavLink>
+              <NavLink href="/food">Food Blog</NavLink>
+              <NavLink href="/apollo">Apollo's Gallery</NavLink>
+              <NavLink href="/contact">Contact</NavLink>
             </Nav>
           </NavbarCollapse>
         </Container>
-
       </Navbar>
     </>
   );

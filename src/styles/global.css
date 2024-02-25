@@ -1,40 +1,10 @@
 /* ensure all pages have Bootstrap CSS */
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-/* Desktop-only view. 
- * Largest mobile view is iPad Pro with 1366 in landscape mode
- */
-@media only screen and (min-width:1367px) {
-    :root {
-        --bg-image-jpg: url('../../public/horsetooth.jpeg');
-        --bg-size: cover;
-        --bg-pos: center center;
-    }
-}
-
-/* Mobile device screens */
-@media only screen and (max-width:1366px) {
-    :root {
-        --bg-image-jpg: url('../../public/horsetooth.jpeg');
-        --bg-pos: top center;
-        --bg-size: 100% auto;
-    }
-}
-
 html,
 body {
-    height: 100%;
-    width: 100%;
-    /* background-image: url("../../public/horsetooth.jpeg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: top center;
-    background-size: 100%; */
-    background-image: var(--bg-image-jpg);
-    background-position: var(--bg-pos);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: var(--bg-size);
+    height: 100vh;
+    width: 100vw;
 }
 
 .md-container {
@@ -60,11 +30,3 @@ body {
     height: 1em;
     margin-left: 10px;
 }
-
-/* .cntr-container {
-    display: flex;
-    width: 100%;
-    max-width: 60%;
-    margin: 0 auto;
-    justify-content: center;
-} */
