@@ -8,7 +8,7 @@ const Header = () => {
         <Container fluid>
           <NavbarBrand href="/">
             <img
-              src="/apollo.jpeg"
+              src="/apollo_icon.png"
               width="30"
               height="30"
               className="d-inline-block align-top"
