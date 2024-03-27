@@ -8,7 +8,7 @@ const Header = () => {
         <Container fluid>
           <NavbarBrand href="/">
             <img
-              src="/apollo.jpeg"
+              src="/apollo_icon.png"
               width="30"
               height="30"
               className="d-inline-block align-top"
@@ -19,10 +19,9 @@ const Header = () => {
           <NavbarCollapse id="responsive-navbar-nav">
             <Nav className="flex-grow-1 justify-content-evenly">
               <NavLink href="/resume">Professional Experience</NavLink>
-              <NavLink href="/about">About Me</NavLink>
-              <NavLink href="/food">Food Blog</NavLink>
-              <NavLink href="/apollo">Apollo's Gallery</NavLink>
-              <NavLink href="/contact">Contact</NavLink>
+              <NavLink href="/about" disabled>About Me</NavLink>
+              <NavLink href="/food" disabled>Food Blog</NavLink>
+              <NavLink href="/apollo" disabled>Apollo's Gallery</NavLink>
             </Nav>
           </NavbarCollapse>
         </Container>

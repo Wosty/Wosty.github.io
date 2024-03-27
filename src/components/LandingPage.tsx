@@ -24,11 +24,11 @@ const LandingPage = () => {
                         <Card.Img src="personal.jpeg"
                             variant="top" />
                         <Card.Body>
-                            <Card.Title>About Me</Card.Title>
+                            <Card.Title>About Me (Coming Soon)</Card.Title>
                             <Card.Text>
                                 Discover more about my passions and my journey to get a better understanding of who I am.
                             </Card.Text>
-                            <Button variant="primary" href="/about">Learn More About Me</Button>
+                            <Button variant="primary" href="/about" disabled>Learn More About Me</Button>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -37,11 +37,11 @@ const LandingPage = () => {
                         <Card.Img src="food.jpeg"
                             variant="top" />
                         <Card.Body>
-                            <Card.Title>Food Blog</Card.Title>
+                            <Card.Title>Food Blog (Coming Soon)</Card.Title>
                             <Card.Text>
                                 Explore my food blog, showcasing dining experiences and homemade delights.
                             </Card.Text>
-                            <Button variant="primary" href="/food">Embark on a Culinary Journey</Button>
+                            <Button variant="primary" href="/food" disabled>Embark on a Culinary Journey</Button>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -50,11 +50,11 @@ const LandingPage = () => {
                         <Card.Img src="apollo.jpeg"
                             variant="top" />
                         <Card.Body>
-                            <Card.Title>Apollo</Card.Title>
+                            <Card.Title>Apollo (Coming Soon)</Card.Title>
                             <Card.Text>
                                 Get to know my dog, Apollo, with a charming gallery showcasing his adorable moments.
                             </Card.Text>
-                            <Button variant="primary" href="/apollo">Browse Apollo's Gallery</Button>
+                            <Button variant="primary" href="/apollo" disabled>Browse Apollo's Gallery</Button>
                         </Card.Body>
                     </Card>
                 </Col>
