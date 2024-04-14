@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+
 export default function PageLayout({
   children,
 }: Readonly<{
@@ -7,6 +9,7 @@ export default function PageLayout({
   return (
     <>
       <div>{children}</div>
+      <Footer />
     </>
   );
 }
