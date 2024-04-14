@@ -9,7 +9,7 @@ export default function Resume() {
         <Container>
           <Row>
             <h2>SUMMARY</h2>
-            <p>A dedicated software engineer passionate about tackling complex challenges and driving innovative solutions. With a strong foundation in various programming languages and technologies, I excel in creating efficient, scalable software systems. Known for my ability to foster teamwork, I leverage collaborative efforts to achieve customer-centric results. My proactive approach to problem-solving and continuous learning empowers me to contribute significantly to software engineering teams, aiming for excellence in every project.</p>
+            <p>A dedicated software engineer passionate about tackling complex challenges and driving innovative solutions. With a strong foundation in various programming languages and technologies, I excel in creating efficient, scalable software systems. Known for my ability to foster teamwork, I leverage collaborative efforts to achieve customer-centric results. My proactive approach to problem-solving and continuous learning empowers me to contribute significantly to software engineering teams.</p>
           </Row>
           <br />
           <Row>
@@ -24,9 +24,9 @@ export default function Resume() {
             <Row>
               <Col>
                 <ul>
-                  <li>Led the modernization of the search team's codebase to address evolving business needs, focusing on workflow optimization, adopting inclusive language, and mitigating security vulnerabilities, thereby ensuring compliance with industry standards.</li>
-                  <li>Pioneered framework enhancements and integration projects, boosting system resilience and scalability, and strategically reducing risks and downtimes.</li>
-                  <li>Established a rigorous unit testing framework, markedly elevating code reliability and diminishing production defects.</li>
+                  <li>Collaborated on a team managing Dell.com's search functionality, handling approximately 4 million monthly requests for a seamless high-traffic user search experience on a high-traffic website.</li>
+                  <li>Engineered and managed a full-stack application to boost search relevancy with data insights, leading to a 15% increase in the average rank of the clicked product.</li>
+                  <li>Led an initiative improving DevOps assessment scores across 18 codebases by addressing vulnerabilities and code quality non-compliance, enhancing system security and reliability.</li>
                 </ul>
               </Col>
             </Row>
@@ -40,8 +40,8 @@ export default function Resume() {
             <Row>
               <Col>
                 <ul>
-                  <li>Efficiently resolved technical issues for users, employing advanced troubleshooting techniques and ensuring high satisfaction levels.</li>
-                  <li>Played a key role in the IT Department's audit preparation, meticulously organizing data and systems to meet stringent compliance standards.</li>
+                  <li>Efficiently resolved technical issues for users, employing advanced troubleshooting techniques and ensuring high satisfaction levels with an average ticket response time of less than 1 business day.</li>
+                  <li>Played a key role in the IT Department's audit preparation, organizing data and over 200 systems to meet stringent compliance standards for a government run institution.</li>
                 </ul>
               </Col>
             </Row>
@@ -69,34 +69,39 @@ export default function Resume() {
             <Row>
               <Col>
                 <ul>
-                  <li>Enhanced student learning by providing expert assistance during classes, fielding questions, and offering feedback on assignments, contributing to a supportive educational environment.</li>
+                  <li>Enhanced student learning by providing assistance during classes, fielding questions, and offering feedback on assignments, contributing to a supportive educational environment for over 100 students.</li>
                 </ul>
               </Col>
             </Row>
-            <h4 style={{ alignContent: "left" }}>Independent Student Research</h4>
+          </Row>
+          <br />
+          <Row>
+            <h2>PROJECTS</h2>
+            <h4 style={{ alignContent: "left" }}>Computer Science Capstone</h4>
             <Col sm={12} md={6}>
-              <h5 style={{ fontStyle: "italic" }}>CyberHealthGIS Research Experience for Undergraduates </h5>
+              <h5 style={{ fontStyle: "italic" }}>ColorClimb - Computer Vision Tool for Indoor Rock Climbing</h5>
             </Col>
             <Col sm={12} md={6}>
-              <h5 style={{ fontWeight: "normal", fontStyle: "normal", float: "right" }}>May - August 2018</h5>
+              <h5 style={{ fontWeight: "normal", fontStyle: "normal", float: "right" }}>January - May 2021</h5>
             </Col>
             <Row>
               <Col>
                 <ul>
-                  <li>Conceptualized and developed a prototype Geographical Information System (GIS) to support firefighter operations, showcasing innovation in emergency response tools.</li>
+                  <li>Crafted an application employing computer vision technology on iOS to identify colored pathways of rock climbing holds, enhancing accessibility for vision-impaired climbers.</li>
                 </ul>
               </Col>
             </Row>
+            <h4 style={{ alignContent: "left" }}>TAMUhack</h4>
             <Col sm={12} md={6}>
-              <h5 style={{ fontStyle: "italic" }}>AggiE_Challenge</h5>
+              <h5 style={{ fontStyle: "italic" }}>Face Check - Facial Recognition for Classroom Attendance</h5>
             </Col>
             <Col sm={12} md={6}>
-              <h5 style={{ fontWeight: "normal", fontStyle: "normal", float: "right" }}>January - December 2018</h5>
+              <h5 style={{ fontWeight: "normal", fontStyle: "normal", float: "right" }}>January 2019</h5>
             </Col>
             <Row>
               <Col>
                 <ul>
-                  <li>Collaboratively designed and executed a research project focused on analyzing running technique quality through accelerometer data from FitBit devices, demonstrating teamwork and analytical skills.</li>
+                  <li>Integrated Microsoft Cognitive Services API into a Raspberry Pi 3, establishing a prototype for facial classification-based classroom attendance tracking.</li>
                 </ul>
               </Col>
             </Row>
@@ -104,7 +109,7 @@ export default function Resume() {
           <br />
           <h2>SKILLS</h2>
           <p><span style={{ fontWeight: "bold" }}>Programming Languages: </span>C#, JavaScript, Python, C++, and Java <br />
-            <span style={{ fontWeight: "bold" }}>Development Tools: </span>.NET, React, Git, Kubernetes, Elasticsearch</p>
+            <span style={{ fontWeight: "bold" }}>Development Tools: </span>.NET, REST, React, Git, Kubernetes, Elasticsearch</p>
           <br />
           <h2>EDUCATION</h2>
           <p>
