@@ -20,8 +20,8 @@ const Header = () => {
             <Nav className="flex-grow-1 justify-content-evenly">
               <NavLink href="/resume">Professional Experience</NavLink>
               <NavLink href="/about" disabled>About Me</NavLink>
-              <NavLink href="/food" disabled>Food Blog</NavLink>
               <NavLink href="/apollo" disabled>Apollo's Gallery</NavLink>
+              <NavLink href="https://github.com/Wosty" target="_blank" rel="noopener noreferrer">Personal GitHub <i className="bi bi-box-arrow-up-right" /></NavLink>
             </Nav>
           </NavbarCollapse>
         </Container>
