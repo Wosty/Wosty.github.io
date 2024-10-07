@@ -2,6 +2,7 @@
 import "../styles/styles.scss";
 import type { Metadata } from "next";
 import Header from "@/components/Header"
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export const metadata: Metadata = {
   title: "Wesley Till",
