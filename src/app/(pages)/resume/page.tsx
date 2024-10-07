@@ -73,6 +73,33 @@ export default function Resume() {
                 </ul>
               </Col>
             </Row>
+            <h4 style={{ alignContent: "left" }}>Independent Student Research</h4>
+            <Col sm={12} md={6}>
+              <h5 style={{ fontStyle: "italic" }}>CyberHealthGIS Research Experience for Undergraduates</h5>
+            </Col>
+            <Col sm={12} md={6}>
+              <h5 style={{ fontWeight: "normal", fontStyle: "normal", float: "right" }}>May - August 2018</h5>
+            </Col>
+            <Row>
+              <Col>
+                <ul>
+                  <li>Conceptualized and developed a prototype Geographical Information System (GIS) featuring a 3D model of a building highlighting firefighter positions using ArcGIS Maps SDK for JavaScript.</li>
+                </ul>
+              </Col>
+            </Row>
+            <Col sm={12} md={6}>
+              <h5 style={{ fontStyle: "italic" }}>AggiE_Challenge</h5>
+            </Col>
+            <Col sm={12} md={6}>
+              <h5 style={{ fontWeight: "normal", fontStyle: "normal", float: "right" }}>January - December 2018</h5>
+            </Col>
+            <Row>
+              <Col>
+                <ul>
+                  <li>Collaboratively designed and executed a research project focused on analyzing running technique quality through accelerometer data from FitBit devices, demonstrating teamwork and analytical skills.</li>
+                </ul>
+              </Col>
+            </Row>
           </Row>
           <br />
           <Row>
