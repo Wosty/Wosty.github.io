@@ -8,7 +8,7 @@ const Footer = () => {
         <Container>
           <Nav fill>
             <NavLink href="https://github.com/Wosty/Wosty.github.io" className='px-4'>GitHub for this Website</NavLink>
-            <NavLink href="mailto:wesley.till99@gmail.com" className='px-4'>Email Me</NavLink>
+            <NavLink href="mailto:info@wesleytill.com" className='px-4'>Email Me</NavLink>
           </Nav>
         </Container>
       </Navbar>
