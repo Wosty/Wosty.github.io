@@ -4,7 +4,7 @@ const Footer = () => {
 
   return (
     <>
-      <Navbar bg="dark" data-bs-theme="dark">
+      <Navbar sticky="bottom" bg="dark" data-bs-theme="dark">
         <Container>
           <Nav fill>
             <NavLink href="https://github.com/Wosty/Wosty.github.io" className='px-4'>GitHub for this Website</NavLink>
