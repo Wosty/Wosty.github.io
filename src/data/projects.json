@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Computer Science Capstone",
+        "subsections": [
+            {
+                "title": "ColorClimb - Computer Vision Tool for Indoor Rock Climbing",
+                "date": "January - May 2021",
+                "points": [
+                    "Crafted an application employing computer vision technology on iOS to identify colored pathways of rock climbing holds, enhancing accessibility for vision-impaired climbers."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "TAMUhack",
+        "subsections": [
+            {
+                "title": "Face Check - Facial Recognition for Classroom Attendance",
+                "date": "January 2019",
+                "points": [
+                    "Integrated Microsoft Cognitive Services API into a Raspberry Pi 3, establishing a prototype for facial classification-based classroom attendance tracking."
+                ]
+            }
+        ]
+    }
+]
