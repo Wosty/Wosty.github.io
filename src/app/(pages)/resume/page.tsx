@@ -26,9 +26,11 @@ export default function Resume() {
           </Row>
           <br />
           <h2>SKILLS</h2>
-          <p><span style={{ fontWeight: "bold" }}>Programming Languages: </span>C#, JavaScript, Python, C++, and Java <br />
-            <span style={{ fontWeight: "bold" }}>Development Tools: </span>.NET, REST, React, Git, Kubernetes, Elasticsearch</p>
-          <br />
+          <p>
+            <span style={{ fontWeight: "bold" }}>Programming Languages: </span>C#, Python, TypeScript, C++, Java, MATLAB<br />
+            <span style={{ fontWeight: "bold" }}>Development Tools: </span>React, Git, Docker, Kubernetes, RabbitMQ, Elasticsearch, Regex, Postman, Splunk<br />
+            <span style={{ fontWeight: "bold" }}>Technical Strengths: </span>High-performance APIs, low-latency architectures, scalable backend design, observability & reliability engineering<br />
+          </p>
           <h2>EDUCATION</h2>
           <p>
             <b>Texas A&M University</b>	<span className='h5' style={{ fontWeight: "normal", fontStyle: "normal", float: "right" }}>May 2021</span> <br />

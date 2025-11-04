@@ -6,9 +6,11 @@
                 "title": "Dell Technologies",
                 "date": "August 2021 - Present",
                 "points": [
-                    "Collaborated on a team managing Dell.com's search functionality, handling approximately 4 million monthly requests for a seamless high-traffic user search experience on a high-traffic website.",
-                    "Engineered and managed a full-stack application to boost search relevancy with data insights, leading to a 15% increase in the average rank of the clicked product.",
-                    "Led an initiative improving DevOps assessment scores across 18 codebases by addressing vulnerabilities and code quality non-compliance, enhancing system security and reliability."
+                    "Engineered and optimized components of Dell.com's search functionality, handling approximately 4 million monthly requests ensuring low-latency responses critical to user experience.",
+                    "Owned the end-to-end design and deployment of a context-aware spellchecking service in C#, delivering 4 ms response times and cutting null results by 80% across 21 countries and 10 languages.",
+                    "Built and maintained a full-stack application to boost search relevancy with data insights, leading to a 15% increase in the average rank of the clicked product.",
+                    "Reduced API benchmarking runtime to less than 1/10th of its original duration while scaling support to 26 countries, providing performance validation that enabled a confident global rollout of the new API.",
+                    "Participated in production support to diagnose and resolve issues, ensuring reliable search services."
                 ]
             }
         ]
@@ -33,7 +35,7 @@
                 "title": "Dell Technologies",
                 "date": "June 2020 - July 2020",
                 "points": [
-                    "Engineered a cutting-edge microcomponent from the ground up, seamlessly integrated with Dell's internal web platform to facilitate efficient pattern-matching search functionalities."
+                    "Engineered an Angular-based search bar microcomponent for Dell's internal sales site, streamlining product lookup by reducing navigation steps and accelerating sales representatives' workflows."
                 ]
             }
         ]
