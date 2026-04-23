@@ -1,18 +1,29 @@
 'use client'
-import React, { ReactElement, useState } from 'react';
-import Image from 'next/image';
-import { Fade } from 'transitions-kit'
-import { Container, Tab, Tabs, Col, Card, Row } from 'react-bootstrap';
+import React from 'react';
+import { Container, Tab, Tabs } from 'react-bootstrap';
 import OrderedImageCard from '../../../components/OrderedImageCard';
+import styles from '../../../styles/apollo.module.css';
+
+function PhotoCard({ card }: { card: OrderedImageCard }) {
+  // golden angle distribution — works for any number of cards without manual tuning
+  const rotation = ((card.imageOrder * 137.508) % 40) / 10 - 2;
+  const hasCaption = card.imageCaption !== '';
+  return (
+    <div
+      className={`${styles.photoCard}${hasCaption ? '' : ' ' + styles.photoCardNoCaption}`}
+      style={{ transform: `rotate(${rotation}deg)` }}
+    >
+      <img src={card.imageUrl} alt={card.imageAltText} className={styles.photoImage} />
+      {hasCaption && <p className={styles.photoCaption}>{card.imageCaption}</p>}
+    </div>
+  );
+}
 
 function Apollo() {
-  const [key, setKey] = useState('apollo');
+  const [key, setKey] = React.useState('apollo');
 
   return (
     <Container fluid="md" style={{ padding: '2rem 1rem' }}>
-      <script src=
-        "https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" async>
-      </script>
       <Tabs
         id="controlled-tab-example"
         activeKey={key}
@@ -20,13 +31,13 @@ function Apollo() {
         className="mb-3"
       >
         <Tab eventKey="apollo" title="Apollo">
-          <AllApollo></AllApollo>
+          <AllApollo />
         </Tab>
         <Tab eventKey="model" title="... the Model">
-          <ModelApollo></ModelApollo>
+          <ModelApollo />
         </Tab>
         <Tab eventKey="goober" title="... the Goober">
-          <GooberApollo></GooberApollo>
+          <GooberApollo />
         </Tab>
       </Tabs>
     </Container>
@@ -54,34 +65,29 @@ const gooberApollo: OrderedImageCard[] = [
 ]
 
 function AllApollo() {
-  let elements: ReactElement[] = []
-  modelApollo.concat(gooberApollo).sort((a, b) => a.imageOrder - b.imageOrder).forEach(element => {
-    elements.push(element.buildCard())
-  })
+  const cards = modelApollo.concat(gooberApollo).sort((a, b) => a.imageOrder - b.imageOrder);
   return (
-    <Row className='g-5 d-flex align-items-center' xs={1} sm={2} md={4}>{elements}</Row>
+    <div className={styles.masonryGrid}>
+      {cards.map(c => <PhotoCard key={c.imageOrder} card={c} />)}
+    </div>
   );
 }
 
 function ModelApollo() {
-  let elements: ReactElement[] = []
-  modelApollo.sort((a, b) => a.imageOrder - b.imageOrder).forEach(element => {
-    elements.push(element.buildCard())
-  });
+  const cards = [...modelApollo].sort((a, b) => a.imageOrder - b.imageOrder);
   return (
-    <Row className='g-5 d-flex align-items-center' xs={1} sm={2} md={4}>{elements}</Row>
+    <div className={styles.masonryGrid}>
+      {cards.map(c => <PhotoCard key={c.imageOrder} card={c} />)}
+    </div>
   );
 }
 
 function GooberApollo() {
-  let elements: ReactElement[] = []
-  gooberApollo.sort((a, b) => a.imageOrder - b.imageOrder).forEach(element => {
-    elements.push(element.buildCard())
-  });
+  const cards = [...gooberApollo].sort((a, b) => a.imageOrder - b.imageOrder);
   return (
-    <Row data-masonry='{"percentPosition": true }' xs={1} sm={2} md={4}>
-      {elements}
-    </Row>
+    <div className={styles.masonryGrid}>
+      {cards.map(c => <PhotoCard key={c.imageOrder} card={c} />)}
+    </div>
   );
 }
 

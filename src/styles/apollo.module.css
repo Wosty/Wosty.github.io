@@ -1,0 +1,55 @@
+.masonryGrid {
+  columns: 1;
+  column-gap: 1.25rem;
+  padding: 0.5rem 0;
+}
+
+@media (min-width: 576px) { .masonryGrid { columns: 2; } }
+@media (min-width: 992px)  { .masonryGrid { columns: 3; } }
+@media (min-width: 1400px) { .masonryGrid { columns: 4; } }
+
+.photoCard {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+
+  background: #ffffff;
+  padding: 10px 10px 20px 10px;
+  border-radius: 2px;
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.18),
+    0 4px 12px rgba(0,0,0,0.12),
+    2px 3px 8px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.photoCard:hover {
+  transform: rotate(0deg) translateY(-6px) !important;
+  box-shadow:
+    0 6px 20px rgba(0,0,0,0.22),
+    0 2px 6px rgba(0,0,0,0.14);
+}
+
+.photoCardNoCaption {
+  padding-bottom: 10px;
+}
+
+.photoImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1px;
+}
+
+.photoCaption {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: #444;
+  text-align: center;
+  line-height: 1.4;
+}
