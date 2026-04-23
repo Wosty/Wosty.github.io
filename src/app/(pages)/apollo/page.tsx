@@ -1,8 +1,8 @@
 'use client'
-import React from 'react';
+import { useState } from 'react';
 import { Container, Tab, Tabs } from 'react-bootstrap';
-import OrderedImageCard from '../../../components/OrderedImageCard';
-import styles from '../../../styles/apollo.module.css';
+import OrderedImageCard from '@/components/OrderedImageCard';
+import styles from '@/styles/apollo.module.css';
 
 function PhotoCard({ card }: { card: OrderedImageCard }) {
   // golden angle distribution — works for any number of cards without manual tuning
@@ -20,7 +20,7 @@ function PhotoCard({ card }: { card: OrderedImageCard }) {
 }
 
 function Apollo() {
-  const [key, setKey] = React.useState('apollo');
+  const [key, setKey] = useState('apollo');
 
   return (
     <Container fluid="md" style={{ padding: '2rem 1rem' }}>
