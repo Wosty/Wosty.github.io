@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Software Engineer II",
+        "subsections": [
+            {
+                "title": "Dell Technologies",
+                "date": "August 2021 - Present",
+                "points": [
+                    "Engineered and optimized components of Dell.com's search functionality, handling approximately 4 million monthly requests ensuring low-latency responses critical to user experience.",
+                    "Owned the end-to-end design and deployment of a context-aware spellchecking service in C#, delivering 4 ms response times and cutting null results by 80% across 21 countries and 10 languages.",
+                    "Built and maintained a full-stack application to boost search relevancy with data insights, leading to a 15% increase in the average rank of the clicked product.",
+                    "Reduced API benchmarking runtime to less than 1/10th of its original duration while scaling support to 26 countries, providing performance validation that enabled a confident global rollout of the new API.",
+                    "Participated in production support to diagnose and resolve issues, ensuring reliable search services."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Help Desk Student Technician",
+        "subsections": [
+            {
+                "title": "The Bush School of Government and Public Service",
+                "date": "June 2019 - May 2021",
+                "points": [
+                    "Efficiently resolved technical issues for users, employing advanced troubleshooting techniques and ensuring high satisfaction levels with an average ticket response time of less than 1 business day.",
+                    "Played a key role in the IT Department's audit preparation, organizing data and over 200 systems to meet stringent compliance standards for a government run institution."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Software Engineering Intern",
+        "subsections": [
+            {
+                "title": "Dell Technologies",
+                "date": "June 2020 - July 2020",
+                "points": [
+                    "Engineered an Angular-based search bar microcomponent for Dell's internal sales site, streamlining product lookup by reducing navigation steps and accelerating sales representatives' workflows."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Peer Teacher",
+        "subsections": [
+            {
+                "title": "ENGR 102 (Intro to Computation)",
+                "date": "August 2018 - May 2019",
+                "points": [
+                    "Enhanced student learning by providing assistance during classes, fielding questions, and offering feedback on assignments, contributing to a supportive educational environment for over 100 students."
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Independent Student Research",
+        "subsections": [
+            {
+                "title": "CyberHealthGIS Research Experience for Undergraduates",
+                "date": "May - August 2018",
+                "points": [
+                    "Conceptualized and developed a prototype Geographical Information System (GIS) featuring a 3D model of a building highlighting firefighter positions using ArcGIS Maps SDK for JavaScript."
+                ]
+            },
+            {
+                "title": "AggiE_Challenge",
+                "date": "January - December 2018",
+                "points": [
+                    "Collaboratively designed and executed a research project focused on analyzing running technique quality through accelerometer data from FitBit devices, demonstrating teamwork and analytical skills."
+                ]
+            }
+        ]
+    }
+]
