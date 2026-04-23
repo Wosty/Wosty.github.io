@@ -1,5 +1,3 @@
-import { Card, Col } from "react-bootstrap";
-
 class OrderedImageCard {
     imageUrl: string;
     imageCaption: string;
@@ -16,28 +14,6 @@ class OrderedImageCard {
         }
         this.imageAltText = imageAltText;
         this.imageOrder = imageOrder ?? Number.MAX_SAFE_INTEGER;
-    }
-
-    public buildCard() {
-        if (this.imageCaption !== "") {
-            return (
-                <Col className="g-5">
-                    <Card>
-                        <Card.Img src={this.imageUrl} variant="top" />
-                        <Card.Text>{this.imageCaption}</Card.Text>
-                    </Card>
-                </Col>
-            )
-        }
-        else {
-            return (
-                <Col className="g-5">
-                    <Card>
-                        <Card.Img src={this.imageUrl} variant="top" />
-                    </Card>
-                </Col>
-            )
-        }
     }
 
 }
