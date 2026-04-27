@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Container, Tab, Tabs } from 'react-bootstrap';
 import apolloData from '@/data/apollo.json';
 import styles from '@/styles/apollo.module.css';
@@ -16,6 +16,14 @@ const BREAKPOINTS = [
   { query: '(min-width: 992px)',  cols: 3 },
   { query: '(min-width: 576px)',  cols: 2 },
 ];
+
+function thumbSrc(url: string): string {
+  const slash = url.lastIndexOf('/');
+  const dir = url.slice(0, slash);
+  const file = url.slice(slash + 1);
+  const base = file.replace(/\.[^.]+$/, '');
+  return `${dir}/thumbs/${base}.jpeg`;
+}
 
 function useColumnCount() {
   const [numCols, setNumCols] = useState(1);
@@ -34,21 +42,50 @@ function useColumnCount() {
   return numCols;
 }
 
-function PhotoCard({ photo }: { photo: Photo }) {
-  // golden angle distribution — works for any number of cards without manual tuning
+function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [onClose]);
+
+  return (
+    <div className={styles.lightboxOverlay} onClick={onClose} role="dialog" aria-modal="true">
+      <img
+        src={src}
+        alt={alt}
+        className={styles.lightboxImage}
+        onClick={e => e.stopPropagation()}
+      />
+    </div>
+  );
+}
+
+function PhotoCard({ photo, onOpen }: { photo: Photo; onOpen: (photo: Photo) => void }) {
   const rotation = ((photo.order * 137.508) % 40) / 10 - 2;
   return (
     <div
       className={`${styles.photoCard}${photo.caption ? '' : ' ' + styles.photoCardNoCaption}`}
       style={{ '--card-rotation': `${rotation}deg` } as React.CSSProperties}
+      onClick={() => onOpen(photo)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') onOpen(photo); }}
+      aria-label={`View full size: ${photo.altText}`}
     >
-      <img src={photo.url} alt={photo.altText} className={styles.photoImage} />
+      <img
+        src={thumbSrc(photo.url)}
+        alt={photo.altText}
+        className={styles.photoImage}
+        loading="lazy"
+        decoding="async"
+      />
       {photo.caption && <p className={styles.photoCaption}>{photo.caption}</p>}
     </div>
   );
 }
 
-function Gallery({ photos }: { photos: Photo[] }) {
+function Gallery({ photos, onOpen }: { photos: Photo[]; onOpen: (photo: Photo) => void }) {
   const numCols = useColumnCount();
   const sorted = [...photos].sort((a, b) => a.order - b.order);
 
@@ -59,7 +96,7 @@ function Gallery({ photos }: { photos: Photo[] }) {
     <div className={styles.masonryGrid}>
       {columns.map((col, i) => (
         <div key={i} className={styles.masonryColumn}>
-          {col.map(photo => <PhotoCard key={photo.order} photo={photo} />)}
+          {col.map(photo => <PhotoCard key={photo.order} photo={photo} onOpen={onOpen} />)}
         </div>
       ))}
     </div>
@@ -70,6 +107,9 @@ const allPhotos: Photo[] = apolloData.tabs.flatMap(tab => tab.photos);
 
 export default function Apollo() {
   const [activeKey, setActiveKey] = useState('all');
+  const [lightbox, setLightbox] = useState<Photo | null>(null);
+  const openLightbox = useCallback((photo: Photo) => setLightbox(photo), []);
+  const closeLightbox = useCallback(() => setLightbox(null), []);
 
   return (
     <Container fluid="md" style={{ padding: '2rem 1rem' }}>
@@ -80,14 +120,17 @@ export default function Apollo() {
         className="mb-3"
       >
         <Tab eventKey="all" title="Apollo">
-          <Gallery photos={allPhotos} />
+          <Gallery photos={allPhotos} onOpen={openLightbox} />
         </Tab>
         {apolloData.tabs.map(tab => (
           <Tab key={tab.key} eventKey={tab.key} title={tab.title}>
-            <Gallery photos={tab.photos} />
+            <Gallery photos={tab.photos} onOpen={openLightbox} />
           </Tab>
         ))}
       </Tabs>
+      {lightbox && (
+        <Lightbox src={lightbox.url} alt={lightbox.altText} onClose={closeLightbox} />
+      )}
     </Container>
   );
 }
