@@ -37,11 +37,11 @@ const LandingPage = () => {
                         <Card.Img src="apollo.jpeg"
                             variant="top" />
                         <Card.Body>
-                            <Card.Title>Apollo (Coming Soon)</Card.Title>
+                            <Card.Title>Apollo</Card.Title>
                             <Card.Text>
                                 Get to know my dog, Apollo, with a charming gallery showcasing his adorable moments.
                             </Card.Text>
-                            <Button variant="primary" href="/apollo" disabled>Browse Apollo's Gallery</Button>
+                            <Button variant="primary" href="/apollo">Browse Apollo's Gallery</Button>
                         </Card.Body>
                     </Card>
                 </Col>

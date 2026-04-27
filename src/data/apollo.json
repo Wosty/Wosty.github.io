@@ -1,0 +1,45 @@
+{
+  "tabs": [
+    {
+      "key": "model",
+      "title": "... the Model",
+      "photos": [
+        { "url": "apollo/apollo_bone.jpeg", "altText": "Apollo chewing on a bone", "order": 1 },
+        { "url": "apollo/apollo_blanket.jpeg", "altText": "Apollo holding a blanket", "order": 2 },
+        {
+          "url": "apollo/apollo_supervisor.jpeg",
+          "altText": "Apollo laying under a desk with a plaque in front with the text 'Apollo, Wesley's Supervisor'",
+          "caption": "While working from home, Apollo is my productivity supervisor even if he sleeps on the job",
+          "order": 3
+        },
+        { "url": "apollo/apollo_look.jpeg", "altText": "Apollo standing forward looking straight at the camera", "order": 5 },
+        {
+          "url": "apollo/apollo_fancy.jpeg",
+          "altText": "Apollo laying on a couch with his front paws crossed",
+          "caption": "Sometimes he likes to remind you that he has the name of a god",
+          "order": 7
+        },
+        { "url": "apollo/apollo_side_snow.jpeg", "altText": "Picture from behind Apollo looking to the right in snow", "order": 10 },
+        { "url": "apollo/apollo_portrait.jpeg", "altText": "Apollo laying on carpet and facing the camera", "order": 11 }
+      ]
+    },
+    {
+      "key": "goober",
+      "title": "... the Goober",
+      "photos": [
+        { "url": "apollo/apollo_cowboy.jpeg", "altText": "Apollo wearing a small fedora", "caption": "Apollo says, \"Howdy\"", "order": 4 },
+        { "url": "apollo/apollo_tongue.jpeg", "altText": "Close up of Apollo laying down and looking back with his tongue slightly sticking out", "order": 6 },
+        {
+          "url": "apollo/apollo_water.png",
+          "altText": "Apollo standing in water with wide eyes and ears pinned back",
+          "caption": "I took Apollo to Barton Springs in Austin and learned he does not like to swim",
+          "order": 8
+        },
+        { "url": "apollo/apollo_first_snow.jpeg", "altText": "Apollo jumping in snow with a little snow on his snout", "caption": "Apollo's first time seeing snow", "order": 9 },
+        { "url": "apollo/apollo_shy.jpeg", "altText": "Apollo laying on a couch with his paw covering his face", "order": 12 },
+        { "url": "apollo/apollo_snow_fun.jpeg", "altText": "Apollo facing the camera, leaning to the left in the snow as if about to run towards the camera", "order": 13 },
+        { "url": "apollo/apollo_blur.jpeg", "altText": "Close up, out of focus picture of Apollo with a small view of his front teeth", "order": 14 }
+      ]
+    }
+  ]
+}

@@ -3,26 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node scripts/generate-thumbnails.mjs && next dev",
+    "build": "node scripts/generate-thumbnails.mjs && next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "bootstrap": "^5.3.2",
-    "bootstrap-icons": "^1.11.3",
-    "next": "^14.2.14",
-    "react": "^18",
-    "react-bootstrap": "^2.10.1",
-    "react-dom": "^18"
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "next": "^16.2.4",
+    "react": "^19",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0",
-    "sass": "^1.70.0",
+    "@types/node": "^25",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^16.2.4",
+    "sass": "^1.99.0",
+    "sharp": "^0.34.5",
     "typescript": "^5"
   }
 }

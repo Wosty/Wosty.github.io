@@ -36,7 +36,7 @@ export class Subsection implements ISubsection {
                 <Row>
                     <Col>
                         <ul>
-                            {this.points.map((point) => { return (<li>{point}</li>); })}
+                            {this.points.map((point, i) => <li key={i}>{point}</li>)}
                         </ul>
                     </Col>
                 </Row>
@@ -70,7 +70,7 @@ export class Section implements ISection {
     Format() {
         return (
             <>
-                <h4 style={{ alignContent: "left" }}>{this.title}</h4>
+                <h4>{this.title}</h4>
                 {this.subsections.map((subsection) => subsection.Format())}
             </>
         );
