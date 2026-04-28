@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Container, Tab, Tabs } from 'react-bootstrap';
 import styles from '@/styles/apollo.module.css';
 
@@ -48,14 +48,32 @@ function useColumnCount() {
 }
 
 function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const previousFocus = useRef<Element | null>(null);
+
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    previousFocus.current = document.activeElement;
+    closeRef.current?.focus();
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'Tab') {
+        e.preventDefault(); // only one focusable element — keep focus pinned
+        closeRef.current?.focus();
+      }
+    };
     document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      (previousFocus.current as HTMLElement | null)?.focus();
+    };
   }, [onClose]);
 
   return (
-    <div className={styles.lightboxOverlay} onClick={onClose} role="dialog" aria-modal="true">
+    <div className={styles.lightboxOverlay} onClick={onClose} role="dialog" aria-modal="true" aria-label={alt}>
+      <button ref={closeRef} className={styles.lightboxClose} onClick={onClose} aria-label="Close">
+        &times;
+      </button>
       <img
         src={src}
         alt={alt}

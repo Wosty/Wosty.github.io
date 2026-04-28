@@ -64,6 +64,34 @@
   padding: 1.5rem;
 }
 
+.lightboxClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid transparent;
+  color: #fff;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: background 0.2s ease;
+}
+
+.lightboxClose:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.lightboxClose:focus-visible {
+  outline: none;
+  border-color: #fff;
+}
+
 .lightboxImage {
   max-width: 100%;
   max-height: 100%;
