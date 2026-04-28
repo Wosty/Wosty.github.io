@@ -1,7 +1,7 @@
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Container } from "react-bootstrap";
 import experience from "@/data/experience.json";
-import projects from "@/data/projects.json"
-import { Section } from "@/models/section";
+import projects from "@/data/projects.json";
+import SectionEntry from "@/components/resume/SectionEntry";
 
 export default function Resume() {
   return (
@@ -17,12 +17,12 @@ export default function Resume() {
           <br />
           <Row>
             <h2>EXPERIENCE</h2>
-            {experience.map(exp => Section.fromJSON(exp).Format())}
+            {experience.map((exp, i) => <SectionEntry key={i} section={exp} />)}
           </Row>
           <br />
           <Row>
             <h2>PROJECTS</h2>
-            {projects.map(project => Section.fromJSON(project).Format())}
+            {projects.map((project, i) => <SectionEntry key={i} section={project} />)}
           </Row>
           <br />
           <h2>SKILLS</h2>
