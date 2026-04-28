@@ -5,8 +5,17 @@ import Header from "@/components/Header"
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export const metadata: Metadata = {
-  title: "Wesley Till",
-  description: "Wesley Till | Personal Website",
+  title: {
+    default: 'Wesley Till',
+    template: '%s | Wesley Till',
+  },
+  description: 'Personal portfolio of Wesley Till — software engineer based in Austin, TX.',
+  metadataBase: new URL('https://wesleytill.com'),
+  openGraph: {
+    siteName: 'Wesley Till',
+    description: 'Personal portfolio of Wesley Till — software engineer based in Austin, TX.',
+    images: [{ url: '/prof.jpeg' }],
+  },
 };
 
 export default function RootLayout({

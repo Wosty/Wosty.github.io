@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
 import { Row, Container } from "react-bootstrap";
+
+export const metadata: Metadata = {
+  title: 'Resume',
+  description: 'Professional experience, projects, and skills of Wesley Till — software engineer.',
+};
 import experience from "@/data/experience.json";
 import projects from "@/data/projects.json";
 import SectionEntry from "@/components/resume/SectionEntry";

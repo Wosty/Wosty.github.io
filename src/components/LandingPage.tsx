@@ -1,3 +1,4 @@
+'use client'
 import { Container, Button, Card, Row, Col } from 'react-bootstrap';
 import animations from '@/styles/animations.module.css'
 
