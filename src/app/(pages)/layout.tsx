@@ -8,7 +8,7 @@ export default function PageLayout({
 
   return (
     <>
-      <div>{children}</div>
+      {children}
       <Footer />
     </>
   );

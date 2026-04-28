@@ -1,0 +1,17 @@
+.pageContainer {
+  padding: 1rem;
+}
+
+.pageTitle {
+  text-align: center;
+}
+
+.subsectionTitle {
+  font-style: italic;
+}
+
+.subsectionDate {
+  font-weight: normal;
+  font-style: normal;
+  float: right;
+}
