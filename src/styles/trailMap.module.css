@@ -1,0 +1,290 @@
+/* ─────────────────────────────────────────────────────────────
+   About page "trail guide" timeline. All page colors resolve to the
+   global theme tokens (theme.css) via the --tm-* aliases below, so
+   the component defines no colors of its own (REFACTOR_NOTES §2.2).
+   Per-stop accent is injected inline as --accent.
+   ───────────────────────────────────────────────────────────── */
+.page {
+  --tm-bg: var(--color-bg);
+  --tm-ink: var(--color-ink);
+  --tm-paper: var(--color-surface);
+  --tm-hot: var(--color-accent);
+  --tm-cool: var(--color-accent-2);
+  --tm-sun: var(--color-accent-3);
+
+  position: relative;
+  overflow-x: hidden;
+  background: var(--tm-bg);
+  color: var(--tm-ink);
+  font-family: var(--font-serif);
+}
+
+/* ── Ornaments ────────────────────────────────────────────────── */
+.sun {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  z-index: 1;
+  pointer-events: none;
+  animation: tm-rotate 60s linear infinite;
+}
+
+@keyframes tm-rotate {
+  to { transform: rotate(360deg); }
+}
+@keyframes tm-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* ── Layout shell ─────────────────────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 3rem;
+}
+
+/* ── Reveal-on-scroll ─────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translate(var(--rx, 0), var(--ry, 0));
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.revealVisible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Header ───────────────────────────────────────────────────── */
+.header {
+  padding-bottom: 2rem;
+}
+.headerNum {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  opacity: 0.5;
+  text-align: right;
+  margin-bottom: 0.75rem;
+}
+.subtitle {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--tm-hot);
+  margin-bottom: 2px;
+}
+.title {
+  font-size: clamp(40px, 10vw, 72px);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -1.5px;
+  margin: 0 0 0.25rem;
+  font-style: italic;
+}
+.titleEmphasis {
+  background: linear-gradient(180deg, transparent 60%, color-mix(in oklab, var(--tm-sun) 67%, transparent) 60%);
+  padding-right: 6px;
+}
+.titleDot {
+  color: var(--tm-hot);
+  font-style: normal;
+}
+
+/* ── Timeline ─────────────────────────────────────────────────── */
+.timeline {
+  position: relative;
+}
+.trailLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12px;
+  border-left: 2px dashed var(--ink-hairline);
+  pointer-events: none;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+}
+.labelRowEnd {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+.label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--tm-hot);
+  font-weight: 700;
+  background: var(--tm-bg);
+  padding: 0 8px;
+}
+.labelBob {
+  animation: tm-bob 2s ease-in-out infinite;
+}
+
+/* Each stop: marker + card in fixed DOM order; grid columns place them. */
+.stop {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.marker {
+  grid-column: 1;
+  display: flex;
+  justify-content: center;
+}
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--tm-ink);
+  box-shadow: 0 0 0 3px var(--tm-bg);
+}
+.card {
+  grid-column: 2;
+}
+
+/* ── Stop card ────────────────────────────────────────────────── */
+.cardMedia {
+  position: relative;
+  aspect-ratio: 16 / 7;
+  max-height: 120px;
+  background-color: var(--tm-paper);
+  border: 1.5px solid var(--tm-ink);
+  box-shadow: 3px 3px 0 var(--accent);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.cardPlaceholder {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(135deg,
+    color-mix(in oklab, var(--accent) 20%, transparent) 0 8px,
+    color-mix(in oklab, var(--accent) 7%, transparent) 8px 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: var(--tm-ink);
+  opacity: 0.6;
+  text-transform: uppercase;
+  text-align: center;
+}
+.cardTape {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 50px;
+  height: 13px;
+  background: rgba(255, 235, 130, 0.65);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.cardBody {
+  background: var(--tm-paper);
+  border: 1px solid var(--ink-hairline);
+  padding: 8px 10px;
+}
+.cardMeta {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+.cardTitle {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(16px, 2.5vw, 19px);
+  line-height: 1.1;
+  color: var(--tm-ink);
+  margin-bottom: 6px;
+}
+.cardBlurb {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  font-family: var(--font-body);
+  color: var(--tm-ink);
+}
+
+/* ── Legend ───────────────────────────────────────────────────── */
+.legend {
+  margin-top: 2.5rem;
+  background: var(--tm-paper);
+  border: var(--border-width-card) solid var(--tm-ink);
+  padding: 12px 14px;
+  box-shadow: var(--shadow-hard) var(--tm-sun);
+  max-width: 260px;
+}
+.legendTitle {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed var(--ink-hairline);
+}
+.legendGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+  font-size: 12px;
+  font-family: var(--font-body);
+}
+.legendGrid b { font-weight: 700; }
+.swatchHot { color: var(--tm-hot); font-weight: 700; }
+.swatchCool { color: var(--tm-cool); font-weight: 700; }
+.swatchSun { color: var(--tm-sun); font-weight: 700; }
+.swatchPath { color: var(--tm-ink); letter-spacing: -2px; }
+
+/* ── Desktop: alternating two-column timeline (Bootstrap md up) ── */
+@media (min-width: 768px) {
+  .trailLine {
+    left: calc(50% - 1px);
+  }
+  .labelRow {
+    justify-content: center;
+  }
+  .stop {
+    grid-template-columns: 1fr 48px 1fr;
+  }
+  .marker {
+    grid-column: 2;
+  }
+  /* Odd stops sit on the right, even stops on the left. */
+  .stopRight .card { grid-column: 3; }
+  .stopLeft .card  { grid-column: 1; }
+  .stopLeft .cardMedia {
+    box-shadow: -3px 3px 0 var(--accent);
+  }
+}
+
+/* ── Reduced motion ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .sun { animation: none; }
+  .labelBob { animation: none; }
+  .reveal {
+    transition: opacity 0.4s ease;
+    transform: none;
+  }
+}

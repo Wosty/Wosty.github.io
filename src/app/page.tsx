@@ -1,16 +1,12 @@
 import type { Metadata } from 'next';
-import LandingPage from "@/components/LandingPage"
-import '../styles/landingPage.css';
+import LandingPage from "@/components/LandingPage";
+import { SITE_NAME, SITE_DESCRIPTION } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: 'Wesley Till',
-  description: 'Personal portfolio of Wesley Till — software engineer based in Fort Collins, CO.',
+  title: SITE_NAME,
+  description: SITE_DESCRIPTION,
 };
 
 export default function Home() {
-  return (
-    <>
-      <LandingPage />
-    </>
-  );
+  return <LandingPage />;
 }

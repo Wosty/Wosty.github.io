@@ -1,18 +1,12 @@
 import type { Metadata } from 'next';
-import Container from "react-bootstrap/Container";
+import TrailMap, { type Stop } from '@/components/about/TrailMap';
+import trailStops from '@/data/trail-stops.json';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'About Wesley Till — software engineer based in Austin, TX.',
+  description: 'About Wesley Till — software engineer based in Fort Collins, CO.',
 };
 
 export default function About() {
-  return (
-    <>
-      <Container>
-        <h1>about</h1>
-        <hr />
-      </Container>
-    </>
-  );
+  return <TrailMap stops={trailStops as Stop[]} title="The trail" />;
 }

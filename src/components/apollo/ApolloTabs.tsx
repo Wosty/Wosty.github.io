@@ -22,8 +22,11 @@ const BREAKPOINTS = [
   { query: '(min-width: 576px)',  cols: 2 },
 ];
 
+// Maps a full-res photo path to its generated thumbnail. Contract: thumbs
+// live in a `thumbs/` subfolder as .jpeg, produced by scripts/generate-thumbnails.mjs.
 function thumbSrc(url: string): string {
   const slash = url.lastIndexOf('/');
+  if (slash === -1) return url; // no directory segment — nothing to rewrite
   const dir = url.slice(0, slash);
   const file = url.slice(slash + 1);
   const base = file.replace(/\.[^.]+$/, '');
@@ -55,6 +58,10 @@ function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: ()
     previousFocus.current = document.activeElement;
     closeRef.current?.focus();
 
+    // Lock background scroll while the lightbox is open.
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
       if (e.key === 'Tab') {
@@ -65,6 +72,7 @@ function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: ()
     document.addEventListener('keydown', onKey);
     return () => {
       document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevOverflow;
       (previousFocus.current as HTMLElement | null)?.focus();
     };
   }, [onClose]);

@@ -1,0 +1,42 @@
+[
+  {
+    "year": "2017",
+    "title": "Texas A&M",
+    "blurb": "Enrolled in Computer Science at College Station. Four years of building, breaking, and figuring out what kind of engineer I wanted to be. Whoop.",
+    "kind": "career",
+    "photo": null,
+    "alt": null
+  },
+  {
+    "year": "2021",
+    "title": "Dell Technologies",
+    "blurb": "Graduated and joined Dell's search engineering team in Austin. Learned that search at scale is a surprisingly hard problem — and that coffee is load-bearing infrastructure.",
+    "kind": "career",
+    "photo": "/prof.jpeg",
+    "alt": "Wesley Till, headshot"
+  },
+  {
+    "year": "2023",
+    "title": "This website",
+    "blurb": "Started building and iterating on this personal site — a small weekend project that became a surprisingly good excuse to stay sharp on front-end tech.",
+    "kind": "project",
+    "photo": null,
+    "alt": null
+  },
+  {
+    "year": "2024",
+    "title": "Fort Collins, CO",
+    "blurb": "Traded Austin heat for Colorado mountains. Closer to Horsetooth, further from the humidity. Highly recommend.",
+    "kind": "place",
+    "photo": "/horsetooth.jpeg",
+    "alt": "Horsetooth Reservoir near Fort Collins, Colorado"
+  },
+  {
+    "year": "2026",
+    "title": "Still at it",
+    "blurb": "Five years in and still curious. Building reliable systems by day, teaching Apollo new tricks by night — success rate varies.",
+    "kind": "career",
+    "photo": null,
+    "alt": null
+  }
+]

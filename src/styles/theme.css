@@ -1,0 +1,52 @@
+/* ─────────────────────────────────────────────────────────────
+   Design tokens — single source of truth for the site palette,
+   typography, and "field guide" surface treatment.
+
+   Rule: components must reference these via var(--token); they must
+   never hardcode hex/oklch values or copy these numbers into modules.
+
+   The hex fallbacks below mirror the Bootstrap SCSS overrides in
+   styles.scss. If you change a color here, update styles.scss too
+   (Bootstrap needs compile-time sRGB hex; see REFACTOR_NOTES §3.2).
+   ───────────────────────────────────────────────────────────── */
+:root {
+  --color-bg: #f4ede0;          /* page background */
+  --color-surface: #fffaf0;     /* cards / paper */
+  --color-ink: #1a1612;         /* text & borders */
+
+  --color-accent: oklch(0.68 0.18 28);    /* primary  — hex ≈ #f36356 */
+  --color-accent-2: oklch(0.55 0.12 160); /* secondary — hex ≈ #118659 */
+  --color-accent-3: oklch(0.78 0.15 75);  /* highlight — hex ≈ #efa831 */
+
+  /* Fonts are provided site-wide by next/font (see root layout).
+     The fallbacks keep things sane if the webfont hasn't loaded. */
+  --font-serif: var(--font-fraunces, Georgia, "Times New Roman", serif);
+  --font-mono: var(--font-jetbrains-mono, ui-monospace, "JetBrains Mono", monospace);
+  --font-body: Georgia, "Times New Roman", Times, serif;
+
+  --border-width-card: 1.5px;
+  --shadow-hard: 3px 3px 0;     /* usage: box-shadow: var(--shadow-hard) var(--color-accent-3); */
+  --radius: 2px;
+
+  /* Hairline dashed rule, the tokenized form of the About page's `${ink}44`. */
+  --ink-hairline: color-mix(in oklab, var(--color-ink) 27%, transparent);
+}
+
+/* ── Shared utilities ─────────────────────────────────────────── */
+
+/* Uppercase, letter-spaced mono microlabel (dates, tags, nav eyebrows). */
+.micro-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Field-guide paper surface with an offset hard shadow.
+   Per-card accent overridable inline: style={{ '--card-accent': 'var(--color-accent-2)' }} */
+.paper-card {
+  background: var(--color-surface);
+  border: var(--border-width-card) solid var(--color-ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hard) var(--card-accent, var(--color-accent-3));
+}

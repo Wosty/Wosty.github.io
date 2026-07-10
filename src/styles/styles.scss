@@ -1,7 +1,35 @@
-$success: #7952b3;
+// ─────────────────────────────────────────────────────────────
+// Bootstrap theme overrides — the single, supported place to
+// recolor/retype Bootstrap. Set variables BEFORE importing Bootstrap.
+//
+// Bootstrap's SCSS color math needs compile-time sRGB hex, so the
+// accent hexes below mirror the oklch tokens in theme.css. Keep the
+// two files in sync (see REFACTOR_NOTES §3.2).
+// ─────────────────────────────────────────────────────────────
+
+// Palette
+$body-bg:            #f4ede0; // --color-bg
+$body-color:         #1a1612; // --color-ink
+$primary:            #f36356; // --color-accent   ≈ oklch(0.68 0.18 28)
+$success:            #118659; // --color-accent-2 ≈ oklch(0.55 0.12 160)
+$warning:            #efa831; // --color-accent-3 ≈ oklch(0.78 0.15 75)
+
+// Surfaces & shape — square-cornered "field guide" look
+$border-radius:      2px;
+$border-radius-sm:   2px;
+$border-radius-lg:   2px;
+$card-bg:            #fffaf0; // --color-surface
+$card-border-color:  #1a1612;
+$card-border-width:  1.5px;
+
+// Typography — headings use the self-hosted Fraunces (next/font var),
+// body uses a warm serif to match the About page's reading text.
+$font-family-base:     Georgia, "Times New Roman", Times, serif;
+$headings-font-family: var(--font-fraunces), Georgia, serif;
 
 @import "bootstrap/scss/bootstrap.scss";
+
+// Global utility layer (non-Bootstrap). Imported after Bootstrap so
+// tokens/utilities can build on it. theme.css owns the design tokens.
+@import "theme.css";
 @import "global.css";
-// body {
-//   padding: 1.5rem;
-// }

@@ -14,4 +14,11 @@
   font-weight: normal;
   font-style: normal;
   float: right;
+  /* field-guide microlabel voice (see theme.css .micro-label) */
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  padding-top: 0.35rem;
 }

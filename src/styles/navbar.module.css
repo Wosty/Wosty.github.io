@@ -1,0 +1,20 @@
+/* Paper-themed nav bars (Header + Footer). Background/border come from
+   theme tokens; no !important because the react-bootstrap `bg` prop is
+   dropped, leaving the background unset for this class to define. */
+.bar {
+  background: var(--color-surface);
+  border-bottom: var(--border-width-card) solid var(--color-ink);
+}
+
+.barBottom {
+  border-bottom: none;
+  border-top: var(--border-width-card) solid var(--color-ink);
+}
+
+/* Nav links adopt the field-guide microlabel voice. */
+.link {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
